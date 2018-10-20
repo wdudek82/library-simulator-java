@@ -4,7 +4,7 @@
 1. Library has two types of users:
 - Students (can borrow as much as 4 items)
 - Lecturers (can borrow as much as 10 items)
-- each user has a first name, last name, and unique card number
+- each user has a first name, last name, and a unique card number
 
 2. Library stores two types of resources:
 - Books (each has title, author, and number of copies)
