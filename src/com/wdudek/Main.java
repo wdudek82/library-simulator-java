@@ -25,5 +25,7 @@ public class Main {
         library.addUser(jimRaynor);
         library.listLibraryUsers();
 
+        library.listAllBooks();
+        library.listAllMagazines();
     }
 }

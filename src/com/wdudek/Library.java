@@ -41,12 +41,6 @@ public class Library {
         return true;
     }
 
-    public boolean addResource(Resource resource) {
-        // search in resources if already added
-        resources.add(resource);
-        return true;
-    }
-
     public void listLibraryUsers() {
         System.out.println("==========================");
         for (User user : users) {
@@ -55,4 +49,27 @@ public class Library {
         System.out.println("==========================");
     }
 
+    public boolean addResource(Resource resource) {
+        // search in resources if already added
+        resources.add(resource);
+        return true;
+    }
+
+    public void listAllMagazines() {
+        listLibraryResources("Magazine");
+    }
+
+    public void listAllBooks() {
+        listLibraryResources("Book");
+    }
+
+    private void listLibraryResources(String type) {
+        System.out.println("============================");
+        for (Resource resource : resources) {
+            if (resource.getClass().getSimpleName().equals(type)) {
+                System.out.println(resource);
+            }
+        }
+        System.out.println("============================");
+    }
 }
