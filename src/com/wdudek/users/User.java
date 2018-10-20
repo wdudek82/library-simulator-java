@@ -45,4 +45,9 @@ public abstract class User {
     public UserType getUserType() {
         return userType;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s;%s;%s;%s", firstName, lastName, CARD_NUMBER, userType);
+    }
 }

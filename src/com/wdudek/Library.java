@@ -1,5 +1,6 @@
 package com.wdudek;
 
+import com.wdudek.resources.Book;
 import com.wdudek.resources.Resource;
 import com.wdudek.users.User;
 
@@ -26,12 +27,32 @@ public class Library {
         this.name = name;
     }
 
-    public List<User> getUsers() {
-        return Collections.unmodifiableList(users);
+    // public List<User> getUsers() {
+    //     return Collections.unmodifiableList(users);
+    // }
+
+    // public List<Resource> getResources() {
+    //     return Collections.unmodifiableList(resources);
+    // }
+
+    public boolean addUser(User user) {
+        // search in user list if already added
+        users.add(user);
+        return true;
     }
 
-    public List<Resource> getResources() {
-        return Collections.unmodifiableList(resources);
+    public boolean addResource(Resource resource) {
+        // search in resources if already added
+        resources.add(resource);
+        return true;
+    }
+
+    public void listLibraryUsers() {
+        System.out.println("==========================");
+        for (User user : users) {
+            System.out.println(user);
+        }
+        System.out.println("==========================");
     }
 
 }
