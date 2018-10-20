@@ -4,6 +4,7 @@ import com.wdudek.resources.Resource;
 import com.wdudek.users.User;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Library {
@@ -25,6 +26,12 @@ public class Library {
         this.name = name;
     }
 
+    public List<User> getUsers() {
+        return Collections.unmodifiableList(users);
+    }
 
+    public List<Resource> getResources() {
+        return Collections.unmodifiableList(resources);
+    }
 
 }
