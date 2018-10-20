@@ -19,17 +19,22 @@
 AND user doesn't reached his limit.
 
 6. We need to be able to list all available library resources:
+```text
 Title;Author;Copies;Available
 Ogniem i mieczem;H. Sienkiewicz;20;7
 
 Title;Issue;Copies;Available
 Traveler;03/2017;30;17
 National Geographic;01/2016;15;13
+```
 
 7. We also need to be able to list all library users (including their type: S - Student, L - Lecturer):
+
+```text
 First Name;Last Name;Card Number;Type
 Grzegorz;Szczutkowski;21;L
 Piotr;Kowalczyk;13;S
+```
 
 8. writing resources and users to a file(s)...
 
