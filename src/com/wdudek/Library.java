@@ -27,14 +27,6 @@ public class Library {
         this.name = name;
     }
 
-    // public List<User> getUsers() {
-    //     return Collections.unmodifiableList(users);
-    // }
-
-    // public List<Resource> getResources() {
-    //     return Collections.unmodifiableList(resources);
-    // }
-
     public boolean addUser(User user) {
         // search in user list if already added
         users.add(user);
