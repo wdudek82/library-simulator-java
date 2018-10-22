@@ -26,32 +26,24 @@ public class Library {
     }
 
     public boolean addUser(User user) {
-        if (!isInUserList(user)) {
+        if (!isLibraryUser(user)) {
             users.add(user);
             return true;
         }
         return false;
     }
 
-    public boolean isInUserList(User user) {
+    public boolean isLibraryUser(User user) {
         return users.contains(user);
     }
 
-    public boolean isInUserList(String cardNumber) {
+    public boolean isLibraryUser(String cardNumber) {
         for (User user : users) {
             if (user.CARD_NUMBER.equals(cardNumber)) {
                 return true;
             }
         }
         return false;
-    };
-
-    public void listLibraryUsers() {
-        System.out.println("==========================");
-        for (User user : users) {
-            System.out.println(user);
-        }
-        System.out.println("==========================");
     }
 
     public boolean addResource(Resource resource) {
@@ -83,6 +75,14 @@ public class Library {
     }
 
     // TODO: Move to separate class? Eg. LibraryManager?
+    public void listLibraryUsers() {
+        System.out.println("==========================");
+        for (User user : users) {
+            System.out.println(user);
+        }
+        System.out.println("==========================");
+    }
+
     public void listAllMagazines() {
         listLibraryResources("Magazine");
     }
