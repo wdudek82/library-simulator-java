@@ -9,7 +9,7 @@ import java.util.List;
 public class Library {
     private String name;
     private List<User> users;
-    private List<Resource> resources;
+    public List<Resource> resources;
 
     public Library(String name) {
         this.name = name;
@@ -55,11 +55,34 @@ public class Library {
     }
 
     public boolean addResource(Resource resource) {
-        // search in resources if already added
-        resources.add(resource);
-        return true;
+        if (!resources.contains(resource)) {
+            resources.add(resource);
+            return true;
+        }
+        return false;
     }
 
+    public void addResources(List<Resource> resources) {
+        for (Resource resource : resources) {
+            if (this.resources.contains(resource)) {
+                System.out.println("Incremented: ");
+                incrementResourceAmount(resource);
+            } else {
+                System.out.println("Added: " + resource);
+                this.resources.add(resource);
+            }
+        }
+    }
+
+    private void incrementResourceAmount(Resource resource) {
+        int resourceIndex = this.resources.indexOf(resource);
+        Resource libraryResource = this.resources.get(resourceIndex);
+        int currentAmount = libraryResource.getNoCopies();
+        int additionalAmount = resource.getNoCopies();
+        libraryResource.setNoCopies(currentAmount + additionalAmount);
+    }
+
+    // TODO: Move to separate class? Eg. LibraryManager?
     public void listAllMagazines() {
         listLibraryResources("Magazine");
     }

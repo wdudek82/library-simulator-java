@@ -2,9 +2,13 @@ package com.wdudek;
 
 import com.wdudek.resources.Book;
 import com.wdudek.resources.Magazine;
+import com.wdudek.resources.Resource;
 import com.wdudek.users.Lecturer;
 import com.wdudek.users.Student;
 import com.wdudek.users.User;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,25 +19,33 @@ public class Main {
         Lecturer johnSummer = new Lecturer("John", "Summer", "12345");
 
         Book book = new Book("The Attention Revolution", "Alan B. Wallace", 6);
-        Book book2 = new Book("The Attention Revolution", "Alan B. Wallace", 6);
+        Book book2 = new Book("The Attention Revolution", "Alan B. Wallace", 18);
         Book book3 = new Book("The Attention", "Alan B. Wallace", 6);
         Magazine magazine = new Magazine("Nie z tej Ziemi", "12/2000", 3);
+        Magazine magazine2 = new Magazine("Nie z tej Ziemi", "12/2000", 2);
+        Magazine magazine3 = new Magazine("Nieznany Świat", "1/1990", 33);
 
-        System.out.println(book.getAuthor());
-        System.out.println(book.getTitle());
-        System.out.println(book.getNoCopies());
+        List<Resource> resources = Arrays.asList(book, book2, book3, magazine, magazine2, magazine3);
 
-        library.addResource(book);
-        library.addResource(magazine);
+        library.addResources(resources);
 
-        library.addUser(johnSnow);
-        System.out.println("Add a user " + library.addUser(jimRaynor));
-        System.out.println("Add a user " + library.addUser(johnSnow2));
-        library.listLibraryUsers();
+        // System.out.println(book.getAuthor());
+        // System.out.println(book.getTitle());
+        // System.out.println(book.getNoCopies());
+        //
+        // library.addResource(book);
+        // library.addResource(magazine);
+        //
+        // library.addUser(johnSnow);
+        // System.out.println("Add a user " + library.addUser(jimRaynor));
+        // System.out.println("Add a user " + library.addUser(johnSnow2));
+        // library.listLibraryUsers();
 
         library.listAllBooks();
         library.listAllMagazines();
 
-        System.out.println("Items equal: " + (book.equals(magazine)));
+        System.out.println("Contains: " + library.resources.contains(book2));
+
+        // System.out.println("Items equal: " + (book.equals(magazine)));
     }
 }
