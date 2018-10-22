@@ -1,11 +1,9 @@
 package com.wdudek;
 
-import com.wdudek.resources.Book;
 import com.wdudek.resources.Resource;
 import com.wdudek.users.User;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Library {
@@ -28,10 +26,25 @@ public class Library {
     }
 
     public boolean addUser(User user) {
-        // search in user list if already added
-        users.add(user);
-        return true;
+        if (!isInUserList(user)) {
+            users.add(user);
+            return true;
+        }
+        return false;
     }
+
+    public boolean isInUserList(User user) {
+        return users.contains(user);
+    }
+
+    public boolean isInUserList(String cardNumber) {
+        for (User user : users) {
+            if (user.CARD_NUMBER.equals(cardNumber)) {
+                return true;
+            }
+        }
+        return false;
+    };
 
     public void listLibraryUsers() {
         System.out.println("==========================");

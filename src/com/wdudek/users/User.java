@@ -50,4 +50,17 @@ public abstract class User {
     public String toString() {
         return String.format("%s;%s;%s;%s", firstName, lastName, CARD_NUMBER, userType);
     }
+
+    @Override
+    public int hashCode() {
+        return CARD_NUMBER.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof User) {
+            return ((User) obj).CARD_NUMBER.equals(CARD_NUMBER);
+        }
+        return false;
+    }
 }
