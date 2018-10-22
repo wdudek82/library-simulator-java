@@ -15,6 +15,8 @@ public class Main {
         Lecturer johnSummer = new Lecturer("John", "Summer", "12345");
 
         Book book = new Book("The Attention Revolution", "Alan B. Wallace", 6);
+        Book book2 = new Book("The Attention Revolution", "Alan B. Wallace", 6);
+        Book book3 = new Book("The Attention", "Alan B. Wallace", 6);
         Magazine magazine = new Magazine("Nie z tej Ziemi", "12/2000", 3);
 
         System.out.println(book.getAuthor());
@@ -32,10 +34,6 @@ public class Main {
         library.listAllBooks();
         library.listAllMagazines();
 
-        System.out.println(johnSnow.equals(johnSnow2));
-
-        System.out.println("Is User: " + (jimRaynor instanceof User));
-
-        System.out.println(library.isInUserList(johnSnow2));
+        System.out.println("Items equal: " + (book.equals(magazine)));
     }
 }

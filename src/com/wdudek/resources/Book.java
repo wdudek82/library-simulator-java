@@ -23,4 +23,19 @@ public class Book extends Resource {
                 getNoCopies() + ";" +
                 getNoAvailableCopies();
     }
+
+    @Override
+    public int hashCode() {
+        return getTitle().hashCode() +
+                getAuthor().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Book) {
+            return ((Book) obj).getAuthor().equals(author) &&
+                    ((Book) obj).getTitle().equals(this.getTitle());
+        }
+        return false;
+    }
 }
